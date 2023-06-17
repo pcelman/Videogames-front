@@ -140,7 +140,7 @@ export default function Create() {
       platforms: [],
       genre: [],
     });
-    navigate.push("/home");
+    navigate("/home");
   }
 
   function handleDelete(e) {
@@ -197,7 +197,7 @@ export default function Create() {
     <div className="create">
       <div>
         <div className="create__title"> Make your own VG</div>
-        <Link to="home">
+        <Link to="../home">
           <button className="create__back">go back</button>
         </Link>
       </div>

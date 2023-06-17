@@ -101,11 +101,11 @@ export default function NavBar({ setCurrentPage, setOrder }) {
         </select>
 
         <select onChange={(e) => handleFilterByGenre(e)}>
-          {" "}
-          {genre.map((e) => (
-            <option value={e.name}>{e.name}</option>
-          ))}
-        </select>
+  {genre.map((e) => (
+    <option key={e.name} value={e.name}>{e.name}</option>
+  ))}
+</select>
+
 
         <div className="navBar__searchbar">
           <SearchBar setCurrentPage={setCurrentPage} />

@@ -61,7 +61,7 @@ useEffect(() => {
   }
 
   return (
-    <body className="home">
+    <main className="home">
       {/* ----------------navBar component -------------- */}
  
         <NavBar setCurrentPage={setCurrentPage} setOrder={setOrder} />
@@ -105,6 +105,6 @@ useEffect(() => {
           })
         )}
       </div>
-    </body>
+    </main>
   );
 }

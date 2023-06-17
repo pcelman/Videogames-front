@@ -1,25 +1,26 @@
 import React from "react";
-import { Link } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import { useEffect } from "react";
 import { getDetail, cleanFilter } from "../actions/index";
 import "../styles/detail.css";
 // import jpg from "./placeHolder.jpg"
 
-export default function Detail(props) {
+export default function Detail() {
+  const { id } = useParams();
   const dispatch = useDispatch();
   const detail = useSelector((state) => state.detail);
   const videogames = useSelector((state) => state.videogames);
 
-  console.log("genero:", detail[0]?.genres[0]?.name);
+  console.log("genre:", detail[0]?.genres[0]?.name);
   const unGenero = detail[0]?.genres[0]?.name;
 
   useEffect(() => {
-    dispatch(getDetail(props.match.params.id));
+    dispatch(getDetail(id));
     return () => {
       dispatch(cleanFilter());
     };
-  }, [dispatch]);
+  }, [dispatch, id]);
 
   return (
     <main className="detail">
@@ -41,9 +42,13 @@ export default function Detail(props) {
                 <h3 className="detail__title">{detail[0].name}</h3>
 
                 <div className="detail__stars">
-                  {[...Array(Math.floor(detail[0].rating))].map((i) => (
+                  {/* {[...Array(Math.floor(detail[0].rating))].map((i) => (
                     <div key={i}>⭐</div>
-                  ))}
+                  ))} */}
+                  {[...Array(Math.floor(detail[0].rating))].map((_, index) => (
+  <div key={index}>⭐</div>
+))}
+
                 </div>
                 <div className="detail__item">
                   <div className="detail__subtitle">Released:</div>

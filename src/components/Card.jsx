@@ -14,7 +14,7 @@ export default function Card({ name, image, genre, rating }) {
       <div className="card__title">{croppedName}</div>
       <div className="card__genre">{genre.join(", ")}</div>
       <ul className="card__stars">
-        {[...Array(Math.floor(rating))].map((i) => (
+        {[...Array(Math.floor(rating))].map((_, i) => (
             <li key={i}>⭐</li>
             ))}
       </ul>
