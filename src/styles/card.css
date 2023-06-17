@@ -1,0 +1,46 @@
+.card {
+  width: 220px;
+  height: 220px;
+  position: relative;
+  background-color: rgb(33, 33, 33);
+  border-radius: 20px;
+}
+
+.card__image {
+  width: 220px;
+  height: 135px;
+  margin-top: 0px;
+  border-radius: 20px 20px 0 0;
+}
+
+.card__title {
+  position: absolute;
+  top: 150px;
+  left: 15px;
+  font-size: 13px;
+  color: white;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.card__genre {
+  width: 207px;
+  position: absolute;
+  top: 169px;
+  left: 15px;
+  font-size: 11px;
+  color: rgb(184, 180, 180);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.card__stars {
+  position: absolute;
+  top: 170px;
+  right: 15px;
+  list-style: none;
+  display: flex;
+  margin-right: 1px;
+}
