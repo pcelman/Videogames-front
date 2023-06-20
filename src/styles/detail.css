@@ -7,6 +7,7 @@
 .detail {
   width: 90%;
   margin: 50px auto;
+  padding: 0;
 }
 
 .detail__card {
@@ -35,6 +36,7 @@
 
 .detail__text {
   grid-area: text;
+
 }
 .detail__stars {
   display: flex;
@@ -65,6 +67,7 @@
   margin-top: 20px;
   grid-area: description;
   line-height: 1.5;
+  text-wrap: balance;
 }
 
 /* loader  */

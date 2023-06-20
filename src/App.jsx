@@ -6,7 +6,7 @@ import Create from "./components/Create"
 import Detail from "./components/Detail"
 import NotFound from "./components/NotFound"
 import axios from "axios"
-axios.defaults.baseURL = "http://localhost:3001"
+axios.defaults.baseURL = "videogames-back-production-7396.up.railway.app"
 
 function App() {
   return (

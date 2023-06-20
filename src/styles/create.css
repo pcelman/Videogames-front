@@ -3,6 +3,7 @@
 .create {
   margin: 50px auto;
   width: 80%;
+  padding: 0;
 }
 
 .create__title {
