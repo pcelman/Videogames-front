@@ -50,10 +50,12 @@ DB_HOST=localhost
 <br/>
 The configuration for the Videogames project is stored in the .env file located in the api folder. This file contains the necessary environment variables for connecting to the PostgreSQL database.
 <br/>
+
 ## Usage
 <br/>
 Once the Videogames project is up and running, you can use the client application to browse and search for video games. The server-side API provides the following endpoints for interacting with the application:
 <br/><br/>
+
 ## API Endpoints
 <br/><br/>
 GET /api/videogame
@@ -120,10 +122,12 @@ Request Body:
  <br/>
 
 <br/><br/>
+
 ## Contributing
 <br/>
 I welcome ontributions to the Videogames project! Whether you want to report a bug, suggest new features, or submit code changes, your contributions are highly appreciated.
 <br/><br/>
+
 ## License
 <br/><br/>
 <code>
