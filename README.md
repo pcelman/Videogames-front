@@ -2,9 +2,9 @@
 [Visit the webpage](https://my-videogame.vercel.app/)
 <br>
 
-Project Documentation
+Project Documentation <br/>
 This documentation provides an overview of the Videogames project, which consists of a client-side and server-side application for managing and displaying video games.
-
+<br/>
 ## Table of Contents
 - [Introduction](#Introduction)
 - [Installation](#Installation)
