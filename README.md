@@ -1,22 +1,6 @@
 # VIDEOGAMES
 [Visit the webpage](https://my-videogame.vercel.app/)
 <br>
-Homepage:<br>
-
-<img width="1349" alt="Screenshot 2023-06-21 at 18 57 16" src="https://github.com/pcelman/Videogames/assets/100241036/59f08ebe-115d-4819-9396-9aff9c3a8157">
-
-
-
-
-
-
-<br>
-Detail of a card:<br>
-<img width="1048" alt="Screenshot 2023-06-21 at 18 57 37" src="https://github.com/pcelman/Videogames/assets/100241036/5da9d05d-23f0-407e-975a-8bd5b655ace1">
-
-Form for the creation of a new videogame with the state of genres and platforms ordered alphabetically for ease of use:
-
-<img width="939" alt="Screenshot 2023-06-21 at 18 58 19" src="https://github.com/pcelman/Videogames/assets/100241036/5a63ed3a-e26a-4c4e-8583-8ed4e6072060">
 
 Project Documentation
 This documentation provides an overview of the Videogames project, which consists of a client-side and server-side application for managing and displaying video games.
@@ -69,8 +53,9 @@ The configuration for the Videogames project is stored in the .env file located 
 ## Usage
 <br/>
 Once the Videogames project is up and running, you can use the client application to browse and search for video games. The server-side API provides the following endpoints for interacting with the application:
-<br/>
-API Endpoints
+<br/><br/>
+## API Endpoints
+<br/><br/>
 GET /api/videogame
 * Description: Retrieves a list of all video games.
 * Query Parameters:
@@ -121,7 +106,37 @@ Example Response:
   "release_date": "2023-01-"
   "description": "a description...
 </code>
+<br/><br/>
+POST /api/videogame
+<br/>
+Description: Creates a new video game entry.
+Request Body:
+* title (string, required): The title of the video game.
+* genre (string, required): The genre of the video game.
+* platform (string, required): The platform(s) on which the video game is available.
+* release_date (string, required): The release date of the video game.
+* image (string): must be the url of an image.
+*  description (string)
+ <br/>
 
+<br/><br/>
+## Contributing
+<br/>
+I welcome ontributions to the Videogames project! Whether you want to report a bug, suggest new features, or submit code changes, your contributions are highly appreciated.
+<br/><br/>
+## License
+<br/><br/>
+<code>
+  MIT License
+
+Copyright (c) [year] [project owner]
+
+Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the "Software"), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:
+
+[License terms and conditions]
+
+
+</code>
 <br/><br/>
 
 ## Images
