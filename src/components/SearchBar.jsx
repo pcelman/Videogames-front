@@ -19,6 +19,12 @@ export default function SearchBar({ setCurrentPage }) {
     setName(""); 
   }
 
+  function handleKeyDown(e) {
+    if (e.keyCode === 13) {
+      handleSubmit(e);
+    }
+  }
+
   return (
     <div className="search">
       <div className="search__area">
@@ -28,6 +34,7 @@ export default function SearchBar({ setCurrentPage }) {
           placeholder="search..."
           value={name} 
           onChange={handleInputChange} 
+          onKeyDown={handleKeyDown}
         />
         <button
           className="search__button"
