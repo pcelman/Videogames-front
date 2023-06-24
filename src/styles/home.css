@@ -76,8 +76,11 @@
 /* ----------No results-------- */
 .home__noresults {
   width: 100%;
-  margin: 120px auto;
+  margin: 70px auto;
   font-family: "Lato", sans-serif;
+  color: white;
+  font-size: 16;
+  text-align: center;
 }
 
 .home__noresults__button {
