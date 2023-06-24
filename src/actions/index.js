@@ -81,7 +81,7 @@ export function getNameVideogames(name) {
   return async function (dispatch) {
     var json = await axios.get(`/videogame?name=${name}`);
     console.log(json);
-    if (json.data === "otra cosa")
+    if (json.data === "no results")
       return dispatch({
         type: "NO_NAME",
         payload: json.data,

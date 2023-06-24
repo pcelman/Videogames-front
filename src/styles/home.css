@@ -73,6 +73,19 @@
   }
 }
 
+/* ----------No results-------- */
+.home__noresults {
+  margin: 250px auto;
+  font-family: "Lato", sans-serif;
+}
+
+.home__noresults button {
+  margin-top: 40px;
+  padding: 30px;
+  border-radius: 10px;
+}
+
+
 @media screen and (max-width: 942px) {
   .home-cards {
     grid-template-columns: repeat(3, 1fr);

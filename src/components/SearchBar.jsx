@@ -16,7 +16,7 @@ export default function SearchBar({ setCurrentPage }) {
     e.preventDefault();
     dispatch(getNameVideogames(name));
     setCurrentPage(1);
-    setName(""); // Reset the name state to clear the input field
+    setName(""); 
   }
 
   return (

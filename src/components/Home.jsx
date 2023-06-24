@@ -82,8 +82,12 @@ useEffect(() => {
               <div className="progress-loader">
               <div className="progress"></div>
             </div> 
-        ) : videogamesFilter[0] === "otra cosa" ? (
-          <img src={notF} alt="not found " width="610px" />
+        ) : videogamesFilter[0] === "no results" ? (
+          <div className="home__noresults">
+          <h2>No videogame with that name in our database</h2>
+          <h2>Would you like to create it?</h2>
+          <button>NEW</button>
+          </div>
         ) : (
           currentVideogames?.map((e) => {
             return (
