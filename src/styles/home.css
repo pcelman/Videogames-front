@@ -76,15 +76,15 @@
 /* ----------No results-------- */
 .home__noresults {
   width: 100%;
-  margin: 70px auto;
+  margin: 70px 100px;
   font-family: "Lato", sans-serif;
   color: white;
-  font-size: 16;
+  font-size: 16px;
   text-align: center;
 }
 
 .home__noresults__button {
-  margin-right: 350px;
+  margin-left: 350px;
   padding: 1.3em 3em;
   font-size: 10px;
   text-transform: uppercase;
