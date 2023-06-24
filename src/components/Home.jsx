@@ -86,7 +86,7 @@ useEffect(() => {
           <div className="home__noresults">
           <h2>No videogame with that name in our database</h2>
           <h2>Would you like to create it?</h2>
-          <button>NEW</button>
+          <button className="navbar__create">NEW</button>
           </div>
         ) : (
           currentVideogames?.map((e) => {
