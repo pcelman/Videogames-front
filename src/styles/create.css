@@ -14,6 +14,7 @@
   font-weight: bold;
 }
 
+/* ---------button back ---------  */
 .create__back {
   position: fixed;
   top: 10px;
@@ -40,6 +41,8 @@
   transform: translateY(-7px);
 }
 
+/* ---------form----------- */
+
 .form__main {
   margin: 250 auto;
   width: 800px;
@@ -48,7 +51,6 @@
   font-family: "Lato", sans-serif;
 }
 
-/* ---------form----------- */
 .form__create {
   margin: 40px;
   padding: 40px;
@@ -56,15 +58,6 @@
   width: 500px;
   border-radius: 20px;
   box-shadow: 25px 22px 32px -22px rgba(0, 0, 0, 1);
-}
-.create__button-x {
-  border-radius: 50%;
-  background-color: rgb(242, 199, 119);
-}
-form input {
-  height: 30px;
-  border-radius: 10px;
-  border: 2px solid rgb(157, 153, 153);
 }
 
 .form__item {
@@ -75,6 +68,15 @@ form input {
   display: inline-block;
   font-weight: bold;
   margin-bottom: 10px;
+}
+.create__button-x {
+  border-radius: 50%;
+  background-color: rgb(242, 199, 119);
+}
+form input {
+  height: 30px;
+  border-radius: 10px;
+  border: 2px solid rgb(157, 153, 153);
 }
 .create__stars {
   appearance: "none";

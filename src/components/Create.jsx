@@ -201,9 +201,9 @@ export default function Create() {
           <button className="create__back">go back</button>
         </Link>
       </div>
-      <div className="form__main">
         {/* ---------form-----------  */}
-        <div className="form__create">
+      <div className="form__main">
+        <section className="form__create">
           <form>
             <div className="form__item">
               <label className="form__label"> Image: </label>
@@ -348,9 +348,9 @@ export default function Create() {
             Create
           </button>
           <div className="image-preview-create"></div>
-        </div>
+        </section>
         {/* ------------card---------------- */}
-        <div className="form__card">
+        <section className="form__card">
           <div className="form__card__image">
             {input.image && <img src={input.image} width="300px" />}
           </div>
@@ -408,7 +408,7 @@ export default function Create() {
             <p className="form__card__label">Platforms: &nbsp;</p>
             {input.platforms && input.platforms}
           </div>
-        </div>
+        </section>
       </div>
     </div>
   );

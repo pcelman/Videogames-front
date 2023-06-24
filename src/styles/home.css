@@ -35,11 +35,8 @@
   left: 50%;
   position: absolute;
   transform: translate(-50%, -50%);
-}
-
-.progress-loader {
   width: 150px;
-  background: rgba(236, 236, 238, 0.253);
+  background: rgba(236, 236, 238, 0.077);
   height: 3px;
   border-radius: 7px;
 }
