@@ -44,7 +44,7 @@ DB_HOST=localhost
 
 * npm install to install the dependencies.
 * npm run dev to start the client application.
-6. Access the client application by visiting http://localhost:3000 in your web browser.
+6. Access the client application by visiting [http://127.0.0.1:5173](http://127.0.0.1:5173) in your web browser.
 
 ## Configuration
 <br/>
