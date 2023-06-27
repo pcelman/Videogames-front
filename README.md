@@ -43,7 +43,7 @@ DB_HOST=localhost
 5. Open another terminal inside the client folder and run the following commands:
 
 * npm install to install the dependencies.
-* npm start to start the client application.
+* npm run dev to start the client application.
 6. Access the client application by visiting http://localhost:3000 in your web browser.
 
 ## Configuration
