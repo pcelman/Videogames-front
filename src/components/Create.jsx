@@ -101,7 +101,7 @@ export default function Create() {
       errors.genre = "Genre already selected";
     }
     if (!pattern.test(input.image)) {
-      errors.image = "You may add a link";
+      errors.image = "You need to add a link";
     }
     if (!pattern.test(input.image)) {
       if (!reg_exImg.test(input.image)) {
