@@ -1,19 +1,23 @@
 import React from "react";
 import "../styles/pg.css";
 
-export default function Pg({ charactersPerPage, charactersFilter, paginado, currentPage }) {
+export default function Pg({
+  videogamePerPage,
+  videogamesFilter,
+  paginado,
+  currentPage,
+}) {
   const pageNumbers = [];
 
   for (let i = 1; i <= Math.ceil(videogamesFilter / videogamePerPage); i++) {
     pageNumbers.push(i);
   }
 
-
   function handlePrev() {
     if (currentPage <= 1) return;
     paginado(currentPage - 1);
   }
- 
+
   function handleNext() {
     if (currentPage >= pageNumbers.length) return;
     paginado(currentPage + 1);
@@ -24,7 +28,7 @@ export default function Pg({ charactersPerPage, charactersFilter, paginado, curr
       {currentPage === 1 ? (
         <div></div>
       ) : (
-        <span className="pg__arrows" onClick={handlePrev}>
+        <span className="pg__arrows" onClick={() => handlePrev()}>
           {" "}
           {"<"}{" "}
         </span>
@@ -39,7 +43,7 @@ export default function Pg({ charactersPerPage, charactersFilter, paginado, curr
               <span>.</span>
             ) : (
               <span
-                className={number === currentPage ? "pg__numbers--underline" : "pg__numbers--standard"}
+                className={number === currentPage ? "pg__numbers--bold" : "pg__numbers--standard"}
                 onClick={() => paginado(number)}
                 key={number}
               >
@@ -52,7 +56,7 @@ export default function Pg({ charactersPerPage, charactersFilter, paginado, curr
       {pageNumbers && currentPage === pageNumbers.length ? (
         <div></div>
       ) : (
-        <span className="pg__arrows" onClick={handleNext}>
+        <span className="arrows" onClick={() => handleNext()}>
           {" "}
           {">"}{" "}
         </span>
