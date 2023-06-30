@@ -1,14 +1,10 @@
 .navbar {
-  position: fixed;
-  height: 95%;
-  width: 220px;
-  background-color: rgb(36, 41, 112, 0.8);
-  z-index: 100;
-  border-radius: 10px;
-  margin: 20px;
+  width: 100%;
+  padding-top: 15px;
+  background-color: rgb(109, 99, 99);
 }
 
-.navbar__items {
+.navbar__container {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -22,83 +18,114 @@
   font-weight: 900;
 }
 
-.navbar__searchbar {
-  margin-top: 200px;
+.home__navbar {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  justify-items: center;
 }
 
 .navbar__create {
-  margin-top: 40px;
-  height: 60px;
-  width: 200px;
-  font-size: 17px;
-  color: black;
-  font-weight: bold;
-  cursor: pointer;
-  transition: all 0.3s ease;
-  border-radius: 11px;
+  margin-right: 350px;
+  padding: 1.3em 3em;
+  font-size: 10px;
+  text-transform: uppercase;
+  letter-spacing: 2.5px;
+  font-weight: 500;
+  color: orange;
+  background-color: #fff;
   border: none;
+  border-radius: 45px;
+  box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease 0s;
+  cursor: pointer;
   outline: none;
-  background-color: rgb(255, 228, 72);
 }
 
 .navbar__create:hover {
-  transform: scale(1.1);
+  background-color: orange;
+  box-shadow: 0px 15px 20px rgba(229, 150, 46, 0.4);
+  color: #fff;
+  transform: translateY(-1px);
 }
-
 
 .navbar__reload {
-  background-color: transparent;
-  box-shadow: none;
-  border: none;
-  font-size: 16px;
-  color: white;
-  cursor: pointer;
-  position: absolute;
-  bottom: 5px;
-  left: 15%;
-  z-index: 100;
-}
-
-.navbar__select {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
   display: flex;
-  flex-direction: column;
-  justify-content: space-around;
   align-items: center;
-  gap: 50px;
-}
-
-select {
-  border: none;
-  border-radius: 5px;
-  padding-left: 10px;
-  height: 60px;
-  width: 200px;
-  background-image: var(--gradient-buttons);
+  justify-content: center;
+  background-color: orange;
   color: white;
+  border: none;
+  margin-right: 40px;
 }
 
-@media screen and (max-width: 599px) {
+.navbar__reload:hover {
+  cursor: pointer;
+}
+
+.navbar__filters select {
+  height: 40px;
+  border-radius: 20px;
+  margin-right: 10px;
+  padding: 5px;
+}
+
+@media screen and (max-width: 1024px) {
+  .navbar__create {
+    margin-right: 130px;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .navbar__create {
+    margin-right: 50px;
+  }
+}
+
+@media screen and (max-width: 425px) {
   .navbar {
-    margin: 20px 10px;
+    padding: 10px 0 10px 10px;
+    width: 100%;
+  }
+
+  .navbar__create {
+    margin-right: 10px;
+  }
+
+  .navbar__title {
+    display: none;
+  }
+  .navbar__container {
+    display: grid;
+    grid-template-areas:
+      "create reload"
+      "filters filters filters";
+  }
+
+  .navbar__title {
+    padding: 5px;
+    grid-area: title;
+  }
+
+  .navbar__create {
+    grid-area: create;
+  }
+
+  .navbar__reload {
+    grid-area: reload;
+  }
+
+  .navbar__filters {
+    grid-area: filters;
+    align-items: center;
   }
 }
 
-@media screen and (max-width: 499px) {
-  .navbar {
-    margin: 20px 0px;
-  }
-}
-
-@media screen and (max-width: 486px) {
- 
-  .navbar {
-    position: fixed;
-    left: -190px;
-    transition: left 0.3s ease;
-margin-top: 20px;
-  }
-
-  .navbar:hover {
-    left: 0;
-  }
-}
+@media screen and (max-width: 4320px) {
+    .navbar {
+      padding: 0;
+      width: 100%;
+    }}

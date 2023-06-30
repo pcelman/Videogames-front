@@ -1,29 +1,16 @@
-@import url("https://fonts.googleapis.com/css2?family=Lato&display=swap");
-
 .card {
-  margin-top: 70px;
+  width: 220px;
+  height: 220px;
   position: relative;
-  width: 300px;
-  height: 410px;
-  z-index: 0;
-  background-color: white;
-  border-radius: 10px;
-  box-shadow: 9px 10px 34px -7px rgba(181, 179, 181, 0.95);
-  font-family: "Lato", sans-serif;
+  background-color: rgb(33, 33, 33);
+  border-radius: 20px;
 }
 
-.card__info {
-  color: #0e4231;
-  text-decoration: none;
-  justify-content: center;
-  align-items: center;
-  /* align-content: center; */
-  display: flex;
-  flex-direction: column;
-  z-index: 100;
-  text-align: center;
-  padding-top: 275px;
-  text-decoration: none;
+.card__image {
+  width: 220px;
+  height: 135px;
+  margin-top: 0px;
+  border-radius: 20px 20px 0 0;
 }
 
 .card__title {
@@ -32,98 +19,28 @@
   left: 15px;
   font-size: 13px;
   color: white;
-  line-height: 1rem;
-  display: inline;
-  /* display: grid;
-  justify-content: space-between; */
-  padding: 0.4rem;
-  padding-left: 0.5rem;
-  margin-right: 1rem;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
 }
 
-.card__name {
-  display: block;
-  text-transform: capitalize;
-  margin-bottom: 2rem;
-  text-align: center;
-  font-size: 25px;
-}
-
-.card__img {
-  width: 300px;
+.card__genre {
+  width: 207px;
   position: absolute;
-  left: -7px;
-  top: -50px;
-  z-index: 1;
-  transform: 0 50%;
-  transform: translateZ(0px) scale(1);
-  transform-origin: 90%;
-  filter: drop-shadow(6px 29px 10px #7b7575);
+  top: 169px;
+  left: 15px;
+  font-size: 11px;
+  color: rgb(184, 180, 180);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
-.card__number {
-  width: 40px;
-  height: 40px;
-  border-radius: 25px;
-  background-color: burlywood;
-  padding: 6px;
-  margin-top: 20px;
-}
-.card__type {
-  padding: 5px;
-  margin: 5px;
-  width: 60px;
-  border-radius: 10px;
-  display: inline-block;
-}
-
-/* -----------progress-loader--------- */
-.progress-loader {
-  top: 50%;
-  left: 50%;
+.card__stars {
   position: absolute;
-  transform: translate(-50%, -50%);
-  width: 150px;
-  background: rgb(236, 236, 238);
-  height: 3px;
-  border-radius: 7px;
-}
-
-.progress {
-  content: "";
-  width: 1px;
-  height: 3px;
-  border-radius: 7px;
-  background: rgb(255, 255, 255);
-  transition: 0.5s;
-  animation: loading1274 2s ease infinite;
-}
-
-@keyframes loading1274 {
-  0% {
-    width: 0%;
-  }
-
-  10% {
-    width: 10%;
-  }
-
-  50% {
-    width: 40%;
-  }
-
-  60% {
-    width: 60%;
-  }
-
-  100% {
-    width: 100%;
-  }
-}
-
-@media screen and (max-width: 770px) {
-  .card {
-
-    width: 280px;
-  }
+  top: 170px;
+  right: 15px;
+  list-style: none;
+  display: flex;
+  margin-right: 1px;
 }
