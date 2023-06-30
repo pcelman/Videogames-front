@@ -1,123 +1,107 @@
-@import url("https://fonts.googleapis.com/css2?family=Lato&display=swap");
-
-:root {
-  background-color: rgb(51, 50, 50);
-}
-
 .detail {
-  width: 90%;
-  margin: 50px auto;
-  padding: 0;
+  position: fixed;
+  overflow-y: scroll;
+  height: 100vh;
+  width: 100%;
+  background-size: cover;
+  /* background-color: black; */
+  background-image: linear-gradient(to right top, #cdcdc9, #d1cecb, #d2cfcf, #d2d0d1, #d2d2d2);
 }
  
 .detail__card {
-  background-color: white;
-  border-radius: 10px;
-  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.9);
-  padding: 50px;
-  margin: 50px;
-  width: 800px;
-  display: grid;
-  grid-template-areas:
-    "image text"
-    "description description";
-  gap: 8px;
+  width: 350px;
+  height: 420px;
+  margin-top: calc(50vh - 150px);
+  margin-left: auto;
+  margin-right: auto;
+  padding: 30px;
+  position: relative;
+  display: flex;
+  flex-direction: column;
   align-items: center;
+  justify-content: center;
+  background: #eeecec;
+  color: #0e4231;
+  border-radius: 10px;
+  font-family: "Lato", sans-serif;
 }
 
 .detail__image {
-  border-radius: 20px;
-  background-size: cover;
-  background-position: center;
-  object-fit: cover;
-  overflow: hidden;
-  grid-area: image;
+  position: absolute;
+  top: -230px;
+  filter: drop-shadow(6px 29px 10px #7b7575);
 }
 
-.detail__text {
-  grid-area: text;
-
+.detail__name {
+  text-transform: capitalize;
+  font-size: 30px;
+  text-align: center;
 }
-.detail__stars {
+
+.detail__hp {
+  margin: 20px auto;
   display: flex;
+  flex-direction: column;
+  gap: 10px;
   justify-content: center;
-  padding-right: 40px;
 }
 
-.detail__subtitle {
-  color: rgb(146, 142, 142);
-  display: inline-block;
+.detail__hp--bg {
+  height: 10px;
+  width: 200px;
+  position: relative;
+  border-radius: 10px;
+  background-color: rgb(215, 210, 210);
+}
+.detail__hp--color {
+  height: 10px;
+  position: absolute;
+  border-radius: 10px;
+  background-color: #9cdda4;
 }
 
-.detail__title {
-  font-weight: bold;
+
+.detail__info--row1 {
+  margin: 30px auto 10px;
+  display: flex;
+  gap: 20px;
+  justify-content: center;
 }
 
-.detail__content {
-  color: black;
+.detail__info--row2 {
+  margin: 0px auto 30px;
+  display: flex;
+  gap: 20px;
+  justify-content: center;
 }
 
 .detail__item {
   display: flex;
-  align-items: center;
+  flex-direction: column;
+}
+
+.detail__line {
+  margin: 10px auto;
+  width: 80%;
+  border: none;
+  border-top: 1px solid rgb(208, 202, 202);
+}
+
+.detail__types {
+  margin: 5px auto 0;
+  display: flex;
   gap: 10px;
+  justify-content: center;
+  align-items: center;
 }
 
-.detail__description {
-  margin-top: 20px;
-  grid-area: description;
-  line-height: 1.5;
-  text-wrap: balance;
+.detail__type {
+  border-radius: 10px;
+  padding: 5px;
+  width: 80px;
 }
 
-/* loader  */
-.progress-loader {
-  top: 50%;
-  left: 50%;
-  position: absolute;
-  transform: translate(-50%, -50%);
-}
-
-.progress-loader {
-  width: 150px;
-  background: rgba(236, 236, 238, 0.253);
-  height: 3px;
-  border-radius: 7px;
-}
-
-.progress {
-  content: "";
-  width: 1px;
-  height: 3px;
-  border-radius: 7px;
-  background: rgb(255, 255, 255);
-  transition: 0.5s;
-  animation: loading1274 2s ease infinite;
-}
-
-@keyframes loading1274 {
-  0% {
-    width: 0%;
-  }
-
-  10% {
-    width: 10%;
-  }
-
-  50% {
-    width: 40%;
-  }
-
-  60% {
-    width: 60%;
-  }
-
-  100% {
-    width: 100%;
-  }
-}
-
-/* -----button----- */
+/* ------- back button------ */
 
 .detail__back {
   position: fixed;
@@ -128,10 +112,8 @@
 .detail__button {
   padding: 1.3em 3em;
   font-size: 10px;
-  text-transform: uppercase;
   letter-spacing: 2.5px;
-  font-weight: 500;
-  color: orange;
+  color: #0e4231;
   background-color: #fff;
   border: none;
   border-radius: 45px;
@@ -142,26 +124,8 @@
 }
 
 .detail__button:hover {
-  background-color: orange;
-  box-shadow: 0px 15px 20px rgba(229, 153, 46, 0.4);
+  background-color: #23c483;
+  box-shadow: 0px 15px 20px rgba(46, 229, 157, 0.4);
   color: #fff;
   transform: translateY(-7px);
-}
-
-@media screen and (max-width: 768px) {
-  .detail__card {
-    background-color: white;
-    border-radius: 10px;
-    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.9);
-    padding: 50px;
-    margin: 50px;
-    width: 720px;
-    display: grid;
-    grid-template-areas:
-      "image"
-      "text"
-      "description";
-    gap: 8px;
-    align-items: center;
-  }
 }

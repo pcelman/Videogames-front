@@ -1,92 +1,113 @@
 import React from "react";
+import { useState } from "react";
 import { Link, useParams } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import { useEffect } from "react";
-import { getDetail, cleanFilter } from "../actions/index";
+import { getDetail, cleanFilter } from "../redux/actions";
+import getTypeColor from "../styles/getTypeColor.js";
 import "../styles/detail.css";
-// import jpg from "./placeHolder.jpg"
 
-export default function Detail() {
-  const { id } = useParams();
+export default function Detail(props) {
+  const [isLoading, setIsLoading] = useState(true);
   const dispatch = useDispatch();
   const detail = useSelector((state) => state.detail);
   const videogames = useSelector((state) => state.videogames);
- 
+
   console.log("genre:", detail[0]?.genres[0]?.name);
   const unGenero = detail[0]?.genres[0]?.name;
 
   useEffect(() => {
-    dispatch(getDetail(id));
+    dispatch(getDetail(id))
+      .then(() => setIsLoading(false))
+      .catch((error) => {
+        // console.log("Error fetching data:", error);
+        setIsLoading(false);
+      });
     return () => {
       dispatch(cleanFilter());
     };
   }, [dispatch, id]);
+  const typeNames =
+    myCharacter.length > 0 ? myCharacter[0].types.map((type) => type.name) : [];
+  const typeColors = getTypeColor(typeNames);
 
   return (
-    <main className="detail">
+    <div className="detail">
       <div className="">
-        <div className="">
-          {detail.length > 0 ? (
-            <div className="detail__card">
-              <div>
-                <img
-                  className="detail__image"
-                  src={detail[0].image}
-                  alt="image not submitted"
-                  width="410px"
-                  height="auto"
+        {/* <div className="card-detail"> */}
+        {isLoading ? (
+          <div className="progress-loader">
+            <div className="progress"></div>
+          </div>
+        ) : myCharacter.length > 0 ? (
+          <div className="detail__card">
+            <img
+              src={
+                myCharacter[0].img ? myCharacter[0].img : myCharacter[0].image
+              }
+              className="detail__image"
+              alt="image not submitted"
+              width="auto"
+              height="290px"
+            />
+            <h1 className="detail__name">{myCharacter[0].name}</h1>
+            <section className="detail__hp">
+              <div className="detail__hp--bg">
+                <div
+                  className="detail__hp--color"
+                  style={{ width: `${(myCharacter[0].hp / 255) * 100}%` }}
                 />
               </div>
-
-              <section className="detail__text">
-                <h3 className="detail__title">{detail[0].name}</h3>
-
-                <div className="detail__stars">
-                  {/* {[...Array(Math.floor(detail[0].rating))].map((i) => (
-                    <div key={i}>⭐</div>
-                  ))} */}
-                  {[...Array(Math.floor(detail[0].rating))].map((_, index) => (
-  <div key={index}>⭐</div>
-))}
-
-                </div>
-                <div className="detail__item">
-                  <div className="detail__subtitle">Released:</div>
-                  <p className="detail__content">
-                    {detail[0].released || detail.createdAt}
-                  </p>
-                </div>
-                <div className="detail__item">
-                  <div className="detail__subtitle">Platforms: </div>
-                  {detail[0].platforms ? (
-                    <p className="detail__content">{` ${detail[0].platforms.join(
-                      ", "
-                    )}`}</p>
-                  ) : (
-                    <div></div>
-                  )}
-                </div>
-                <div className="detail__item">
-                  <div className="detail__subtitle">Genres: </div>
-                  <p className="detail__content">{`  ${detail[0].genres
-                    .map((e) => e.name)
-                    .join(", ")}`}</p>
-                </div>
-              </section>
-              <div className="detail__description">{detail[0].description}</div>
-              <div className="detail__back">
-                <Link to="/home">
-                  <button className="detail__button">Back</button>
-                </Link>
+              <p>hp</p>
+            </section>
+            <section className="detail__info--row1">
+              <div className="detail__item">
+                <h2>{myCharacter[0].attack}</h2>
+                <p>Attack: </p>
               </div>
-            </div>
-          ) : (
-            <div className="progress-loader">
-              <div className="progress"></div>
-            </div>
-          )}
+              <div className="detail__item">
+                <h2>{myCharacter[0].defense}</h2>
+                <p>Defense</p>
+              </div>
+              <div className="detail__item">
+                <h2>{myCharacter[0].speed}</h2>
+                <p>Speed</p>
+              </div>
+            </section>
+
+            <section className="detail__info--row2">
+              <div className="detail__item">
+                <h2>{myCharacter[0].height}</h2>
+                <p>Height</p>
+              </div>
+              <div className="detail__item">
+                <h2>{myCharacter[0].weight}</h2>
+                <p>Weight </p>
+              </div>
+            </section>
+            <hr className="detail__line" />
+            <section className="detail__types">
+              {myCharacter[0].types.map((e, index) => (
+                <p
+                  className="detail__type"
+                  style={{ backgroundColor: typeColors[index] }}
+                  key={e.id}
+                >
+                  {e.name}
+                </p>
+              ))}
+            </section>
+            {/* <p> Type</p> */}
+          </div>
+        ) : null}
+
+        <div className="detail__back">
+          <Link to="/home">
+            <button className="detail__button">BACK</button>
+          </Link>
         </div>
       </div>
-    </main>
+    </div>
+    // </div>
   );
 }

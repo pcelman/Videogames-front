@@ -1,13 +1,14 @@
 import React, { useState } from "react";
 import { useDispatch } from "react-redux";
-import { getNameVideogames } from "../actions/index";
-import "../styles/searchBar.css";
+import { getNameCharacters } from "../redux/actions.js";
+import "../styles/searchbar.css";
+import { BsSearch } from "react-icons/Bs";
 
-export default function SearchBar({ setCurrentPage }) {
+export default function SearchBar() {
   const dispatch = useDispatch();
   const [name, setName] = useState("");
 
-  function handleInputChange(e) {
+  function hanldeInputChange(e) {
     e.preventDefault();
     setName(e.target.value);
   }
@@ -15,9 +16,9 @@ export default function SearchBar({ setCurrentPage }) {
   
   function handleSubmit(e) {
     e.preventDefault();
-    dispatch(getNameVideogames(name));
+    dispatch(getNameCharacters(name));
+    setName("");
     setCurrentPage(1);
-    setName(""); 
   }
  
   function handleKeyDown(e) {
@@ -27,25 +28,17 @@ export default function SearchBar({ setCurrentPage }) {
   }
 
   return (
-    <div className="search">
-      <div className="search__area">
-        <input
-          className="search__input"
-          type="text"
-          placeholder="search..."
-          value={name} 
-          onChange={handleInputChange} 
-          onKeyDown={handleKeyDown}
-        />
-        <button
-          className="search__button"
-          type="submit"
-          onClick={handleSubmit} 
-          disabled={!name}
-        >
-          Search
-        </button>
-      </div>
+    <div className="searchbar">
+      <input
+        type="text"
+        placeholder="Pokemon name..."
+        value={name}
+        onChange={(e) => hanldeInputChange(e)}
+        onKeyDown={handleKeyDown}
+      />
+      <button type="submit" onClick={handleSubmit} disabled={!name}>
+        <BsSearch size={20} />
+      </button>
     </div>
   );
 }

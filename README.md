@@ -161,3 +161,4 @@ Detail of a card:<br/><br/>
 Form for the creation of a new videogame with the state of genres and platforms ordered alphabetically for ease of use:
 <br/><br/>
 <img width="939" alt="Screenshot 2023-06-21 at 18 58 19" src="https://github.com/pcelman/Videogames/assets/100241036/5a63ed3a-e26a-4c4e-8583-8ed4e6072060">
+# Pokemon-front

@@ -1,37 +1,48 @@
-@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Lato&display=swap");
-
 .pg {
   display: flex;
   flex-direction: row;
-  margin-top: 30px;
-  align-items: center;
-  justify-content: center;
-  margin-bottom: 15px;
+  margin-top: 150px;
+  position: absolute;
+  bottom: 30px;
+  left: 6.5%;
+  z-index: 100;
+  font-family: "Lato", sans-serif;
 }
-.pg__arrows {
 
-  font-size: 20px;
-  cursor: pointer;
+.pg__arrows {
+  font-size: 14px;
+  color: white;
+  padding-left: 7px;
 }
- 
+
 .pg__numbers {
   display: flex;
   justify-content: center;
   font-size: 16px;
-}
-.pg__numbers--bold {
-  color: aliceblue;
-  letter-spacing: 12px;
-  text-decoration-style: solid;
-  font-weight: bold;
-  cursor: pointer;
+  color: white;
+  text-decoration: underline;
+  padding-left: 7px;
 }
 
 .pg__numbers--standard {
-  text-decoration: none;
-  letter-spacing: 12px;
-  cursor: pointer;
+  font-size: 14px;
+  color: white;
+  padding-left: 7px;
 }
 
+@media screen and (max-width: 1291px) {
+  .pg {
+    left: 8.5%;
+  }
+}
 
-
+@media screen and (max-width: 770px) {
+  .pg {
+    left: 12.5%;
+  }
+}
+@media screen and (max-width: 486px) {
+  .pg__arrows, .pg__numbers--underline, .pg__numbers--standard {
+    text-shadow: 1px 1px 2px black;
+  }
+}
