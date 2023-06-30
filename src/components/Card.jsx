@@ -1,5 +1,4 @@
 import React from "react";
-import getTypeColor from "../styles/getTypeColor.js";
 import "../styles/card.css";
 
 export default function Card({ name, image, genre, rating }) {
