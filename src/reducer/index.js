@@ -15,7 +15,7 @@ const initialState = {
           ...state,
           videogames: action.payload,
           videogamesFilter: action.payload, //cuando trae los v, hace dos copias
-        };
+        }; 
   
       case "GET_GENRE":
         return {

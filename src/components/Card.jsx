@@ -6,7 +6,7 @@ export default function Card({ name, image, genre, rating }) {
   const star = "*";
   const index = Math.floor(rating);
   const croppedName = name.length > 25 ? name.substring(0, 17) + "..." : name;
-
+ 
   return (
     <div className="card">
       <img src={image} alt={name} className="card__image" />

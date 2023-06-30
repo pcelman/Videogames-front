@@ -9,7 +9,7 @@ import {
 } from "../actions/index";
 import { useDispatch, useSelector } from "react-redux";
 import "../styles/create.css";
-
+ 
 export default function Create() {
   const dispatch = useDispatch();
   const navigate = useNavigate();

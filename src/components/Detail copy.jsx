@@ -11,7 +11,7 @@ export default function Detail() {
   const dispatch = useDispatch();
   const detail = useSelector((state) => state.detail);
   const videogames = useSelector((state) => state.videogames);
-
+ 
   console.log("genre:", detail[0]?.genres[0]?.name);
   const unGenero = detail[0]?.genres[0]?.name;
 

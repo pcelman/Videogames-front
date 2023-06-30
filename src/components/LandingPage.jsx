@@ -15,7 +15,8 @@ export default function LandingPage() {
       </h1>
       {/* <h2 className="landing__subtitle">Create</h2>
       <h2 className="landing__subtitle">click on a card to start!</h2> */}
-
+ 
+ 
       <div className="landing__cards">
         <Link to="/home">
           <div className="landing__flipcard">

@@ -11,9 +11,11 @@
   line-height: 70%;
   font-weight: 900;
 }
+
 .landing__subtitle {
   color: blue;
 }
+
 .landing__cards {
   display: flex;
   gap: 30px;

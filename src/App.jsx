@@ -8,6 +8,7 @@ import NotFound from "./components/NotFound"
 import axios from "axios"
 axios.defaults.baseURL = "https://videogames-back-production-4a4a.up.railway.app/"
 
+
 function App() {
   return (
     <BrowserRouter>

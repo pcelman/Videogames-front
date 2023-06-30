@@ -14,7 +14,7 @@ import Pg from "./Pg";
 import jpg from "../images/placeHolder.jpg";
 import notF from "../images/notF.png";
 import "../styles/home.css";
-
+ 
 export default function Home() {
   const [isLoading, setIsLoading] = useState(true);
   const dispatch = useDispatch();

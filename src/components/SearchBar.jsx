@@ -12,13 +12,14 @@ export default function SearchBar({ setCurrentPage }) {
     setName(e.target.value);
   }
 
+  
   function handleSubmit(e) {
     e.preventDefault();
     dispatch(getNameVideogames(name));
     setCurrentPage(1);
     setName(""); 
   }
-
+ 
   function handleKeyDown(e) {
     if (e.keyCode === 13) {
       handleSubmit(e);

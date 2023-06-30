@@ -9,6 +9,7 @@ export default function Pg({
 }) {
   const pageNumbers = [];
 
+  
   for (let i = 1; i <= Math.ceil(videogamesFilter / videogamePerPage); i++) {
     pageNumbers.push(i);
   }
@@ -17,7 +18,7 @@ export default function Pg({
     if (currentPage <= 1) return;
     paginado(currentPage - 1);
   }
-
+ 
   function handleNext() {
     if (currentPage >= pageNumbers.length) return;
     paginado(currentPage + 1);

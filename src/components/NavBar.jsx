@@ -13,6 +13,7 @@ import {
 import { AiOutlineReload } from "react-icons/ai";
 import SearchBar from "./SearchBar";
 import "../styles/navBar.css";
+ 
 
 export default function NavBar({ setCurrentPage, setOrder }) {
   const dispatch = useDispatch();
