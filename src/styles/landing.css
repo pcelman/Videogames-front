@@ -17,6 +17,7 @@
 .landing__cards {
   display: flex;
   gap: 30px;
+  place-content: center;
 }
 
 .landing__card {
