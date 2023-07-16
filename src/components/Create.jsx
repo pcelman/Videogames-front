@@ -1,9 +1,9 @@
 import React, { useState, useEffect } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import {
-  postCharacter,
+  postVideogame,
   getTypes,
-  getCharacters,
+  getVideogames,
   cleanFilter,
 } from "../redux/actions";
 import { useDispatch, useSelector } from "react-redux";
@@ -15,7 +15,7 @@ export default function Create() {
   const navigate = useNavigate();
   const types = useSelector((state) => state.types);
   const [errors, setErrors] = useState({});
-  const characters = useSelector((state) => state.characters);
+  const videogames = useSelector((state) => state.videogames);
 
 
 
@@ -33,7 +33,7 @@ export default function Create() {
 
   useEffect(() => {
     dispatch(getTypes());
-    dispatch(getCharacters());
+    dispatch(getVideogames());
     if (validate(input)) {
       setErrors(validate(input));
     }
@@ -58,7 +58,7 @@ export default function Create() {
     }
     if (!input.name) {
       errors.name = "Fill in the name";
-    } else if (characters.find((e) => e.name === input.name)) {
+    } else if (videogames.find((e) => e.name === input.name)) {
       errors.name = "Name already exists";
     }
     if (input.types.length === 0) {
@@ -106,7 +106,7 @@ export default function Create() {
 
   function handleSubmit(e) {
     e.preventDefault();
-    dispatch(postCharacter(input));
+    dispatch(postVideogame(input));
     setTimeout(() => {
       alert("Created!");
       setInput({
