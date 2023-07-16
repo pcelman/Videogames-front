@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import {
   postVideogame,
-  getTypes,
+  getGenres,
   getVideogames,
   cleanFilter,
 } from "../redux/actions";
@@ -127,11 +127,11 @@ export default function Create() {
   function handleDelete(e) {
     setInput({
       ...input,
-      types: input.types.filter((t) => t !== e.target.value),
+      types: input.genres.filter((t) => t !== e.target.value),
     });
   }
 
-  const typeNames = input.types.map((e) => e.name);
+  const genresNames = input.genres.map((e) => e.name);
 
 
   
@@ -140,7 +140,7 @@ export default function Create() {
   return (
     <div className="create">
       <div className="create__content">
-        <h1 className="create__title"> Make your own pokemon</h1>
+        <h1 className="create__title"> Make your own videogame card</h1>
         <div className="create__back">
           <Link to="/home">
             <button className="create__button">BACK</button>
@@ -314,20 +314,7 @@ export default function Create() {
             </section>
             <hr className="form__card__line" />
 
-            {/* <section className="form__card__item--type">
-              <p className="form__card__label ">Type: &nbsp;</p>
-              {input.types && (
-                <>
-                  {input.types.map((type, index) => (
-                    <span className="form__card__label--types" key={type}>
-                      {type}
-                      {index !== input.types.length - 1 && <>,&nbsp; &nbsp;</>}
-                    </span>
-                  ))}
-                </>
-
-              )}
-            </section> */}
+       
 
 <section className="form__card__item--type">
   <p className="form__card__label ">Type: &nbsp;</p>
