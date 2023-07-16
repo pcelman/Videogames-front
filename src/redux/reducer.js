@@ -54,7 +54,7 @@ function rootReducer(state = initialState, action) {
         videogamesFilter: filterCreatedDB,
       };
 
-    case "POST_CHARACTER":
+    case "POST_VIDEOGAME":
       return {
         ...state,
       };

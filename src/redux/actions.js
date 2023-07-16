@@ -77,15 +77,14 @@ export function orderByAttack(payload) {
 export function getTypes(){
     return async function (dispatch) {
         var info = await axios.get ("/types", {
-//se puede poner info o json
         })
-        return dispatch({ type: "GET_TYPES", payload: info.data})//este types lo cambie a plural
+        return dispatch({ type: "GET_TYPES", payload: info.data})
     }
 }
 
-export function postCharacter(payload){
+export function postVideogame(payload){
     return async function (dispatch) {
-        const response = await axios.post("/pokemon", payload)//en esta ruta quiero hacer el post del payload, ese payload es lo que me llega desde el front
+        const response = await axios.post("/pokemon", payload)
         return response;
     }
 }
