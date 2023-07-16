@@ -313,7 +313,8 @@ export default function Create() {
               </div>
             </section>
             <hr className="form__card__line" />
-            <section className="form__card__item--type">
+
+            {/* <section className="form__card__item--type">
               <p className="form__card__label ">Type: &nbsp;</p>
               {input.types && (
                 <>
@@ -326,7 +327,16 @@ export default function Create() {
                 </>
 
               )}
-            </section>
+            </section> */}
+
+<section className="form__card__item--type">
+  <p className="form__card__label ">Type: &nbsp;</p>
+  {input.types && (
+    <>
+      {input.types.join(", ")}
+    </>
+  )}
+</section>
 
             <div>
                 <button
