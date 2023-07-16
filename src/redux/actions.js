@@ -5,18 +5,18 @@ export const actionTypes = {
 }
 
 
-export function getCharacters(){
+export function getVideogames(){
     return async function(dispatch){
         var json = await axios.get("/pokemon");
         await dispatch({
-            type: "GET_CHARACTERS",
+            type: "GET_VIDEOGAMES",
             payload: json.data
         })
     }
 }
 
 
-export function filterCharactersByTypes(payload){
+export function filterVideogamesByTypes(payload){
     return {
         type: "FILTER_BY_TYPES",
         payload
@@ -50,22 +50,7 @@ export function orderByAttack(payload) {
     };
 };
 
-
-// export function getNameCharacters(name){
-//     return async function (dispatch){
-//         try {
-//             var json = await axios.get(`/pokemon?name=${name}`)
-//             return dispatch({
-//                 type: "GET_NAME_CHARACTERS",
-//                 payload: json.data 
-//             })
-//         } catch (error){ 
-//             console.log(error)
-//         }
-//     }
-// }
-
-  export function getNameCharacters(name) {
+  export function getNameVideogames(name) {
     return async function (dispatch) {
       try {
         const response = await axios.get(`/pokemon?name=${name}`);
@@ -78,7 +63,7 @@ export function orderByAttack(payload) {
         }
   
         return dispatch({
-          type: "GET_NAME_CHARACTERS",
+          type: "GET_NAME_VIDEOGAMES",
           payload: response.data,
         });
       } catch (error) {

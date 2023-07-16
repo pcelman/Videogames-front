@@ -1,33 +1,33 @@
 const initialState = {
-  characters: [],
-  charactersFilter: [],
+  videogames: [],
+  videogamesFilter: [],
   types: [],
   detail: [],
 };
 
 function rootReducer(state = initialState, action) {
   switch (action.type) {
-    case "GET_CHARACTERS":
+    case "GET_VIDEOGAMES":
       return {
         ...state,
-        characters: action.payload,
-        charactersFilter: action.payload, // cuando trae los videogames, hace dos copias
+        videogames: action.payload,
+        videogamesFilter: action.payload, // cuando trae los videogames, hace dos copias
       };
 
-    case "GET_NAME_CHARACTERS":
+    case "GET_NAME_VIDEOGAMES":
       return {
         ...state,
-        charactersFilter: action.payload,
+        videogamesFilter: action.payload,
       };
 
     case "NO_NAME":
       return {
         ...state,
-        charactersFilter: [action.payload],
+        videogamesFilter: [action.payload],
       };
 
     case "FILTER_BY_TYPES":
-      const allCh = state.characters;
+      const allCh = state.videogames;
       const filterAllCh =
         action.payload === "Types"
           ? allCh
@@ -36,22 +36,22 @@ function rootReducer(state = initialState, action) {
             );
       return {
         ...state,
-        charactersFilter: filterAllCh,
+        videogamesFilter: filterAllCh,
       };
 
     case "FILTER_CREATED":
       var filterCreatedDB;
       if (action.payload === "all") {
-        filterCreatedDB = state.characters;
+        filterCreatedDB = state.videogames;
       } else if (action.payload === "api") {
-        filterCreatedDB = state.characters.filter((poke) => !poke.createdInDb);
+        filterCreatedDB = state.videogames.filter((poke) => !poke.createdInDb);
       } else if (action.payload === "db") {
-        filterCreatedDB = state.characters.filter((poke) => poke.createdInDb);
+        filterCreatedDB = state.videogames.filter((poke) => poke.createdInDb);
       }
-      // console.log('Filtered characters:', filterCreatedDB);
+      // console.log('Filtered videogames:', filterCreatedDB);
       return {
         ...state,
-        charactersFilter: filterCreatedDB,
+        videogamesFilter: filterCreatedDB,
       };
 
     case "POST_CHARACTER":
@@ -66,7 +66,7 @@ function rootReducer(state = initialState, action) {
       };
 
     case "ORDER_BY_NAME":
-      var uno = [...state.charactersFilter];
+      var uno = [...state.videogamesFilter];
       action.payload === "asc"
         ? uno.sort(function (a, b) {
             if (a.name.toLowerCase() > b.name.toLowerCase()) {
@@ -88,13 +88,13 @@ function rootReducer(state = initialState, action) {
           });
       return {
         ...state,
-        charactersFilter: uno,
+        videogamesFilter: uno,
       };
 
     case "ORDER_BY_ATTACK":
       let sortedArr1 =
         action.payload === "attackMin"
-          ? state.charactersFilter.sort(function (a, b) {
+          ? state.videogamesFilter.sort(function (a, b) {
               if (a.attack > b.attack) {
                 return 1;
               }
@@ -103,7 +103,7 @@ function rootReducer(state = initialState, action) {
               }
               return 0;
             })
-          : state.charactersFilter.sort(function (a, b) {
+          : state.videogamesFilter.sort(function (a, b) {
               if (a.attack > b.attack) {
                 return -1;
               }
@@ -114,7 +114,7 @@ function rootReducer(state = initialState, action) {
             });
       return {
         ...state,
-        charactersFilter: sortedArr1,
+        videogamesFilter: sortedArr1,
       };
 
     case "GET_DETAILS":
@@ -126,7 +126,7 @@ function rootReducer(state = initialState, action) {
     case "CLEAN_FILTER":
       return {
         ...state,
-        charactersFilter: action.payload,
+        videogamesFilter: action.payload,
         detail: action.payload,
       };
 
