@@ -6,6 +6,11 @@
   padding: 0;
 }
 
+.create__content {
+  display: flex;
+  align-items: center;
+}
+
 .create__title {
   margin: 60px 0 0;
   font-family: "Lato", sans-serif;

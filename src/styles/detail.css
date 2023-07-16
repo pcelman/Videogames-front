@@ -10,6 +10,10 @@
   padding: 0;
 }
 
+.detail__container {
+  display: flex;
+  place-items: center;
+}
 .detail__card {
   background-color: white;
   border-radius: 10px;
