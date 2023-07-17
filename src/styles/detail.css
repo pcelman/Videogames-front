@@ -7,9 +7,7 @@
 .detail {
   width: 90%;
   margin: 50px auto;
-  padding: 0;
-  display: flex;
-  place-items: center;
+
 }
 
 .detail__container {
@@ -21,8 +19,8 @@
   background-color: white;
   border-radius: 10px;
   box-shadow: 0 15px 30px rgba(0, 0, 0, 0.9);
-  padding: 50px;
-  margin: 50px;
+  /* padding: 50px; */
+  /* margin: 50px; */
   width: 800px;
   display: grid;
   grid-template-areas:
