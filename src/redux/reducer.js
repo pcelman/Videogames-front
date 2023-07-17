@@ -11,7 +11,7 @@ function rootReducer(state = initialState, action) {
       return {
         ...state,
         videogames: action.payload,
-        videogamesFilter: action.payload, // cuando trae los videogames, hace dos copias
+        videogamesFilter: action.payload, 
       };
 
     case "GET_NAME_VIDEOGAMES":

@@ -1,4 +1,5 @@
 import axios from "axios"
+axios.defaults.baseURL = "https://videogames-back-production-4a4a.up.railway.app/"
 
 export const actionTypes = {
     ORDER_BY_NAME: "ORDER_BY_NAME",
