@@ -13,6 +13,8 @@
 }
 
 .detail__container {
+  display: flex;
+  place-items: center;
 }
 
 .detail__card {
