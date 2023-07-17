@@ -8,11 +8,11 @@
   width: 90%;
   margin: 50px auto;
   padding: 0;
+  display: flex;
+  place-items: center;
 }
 
 .detail__container {
-  display: flex;
-  place-items: center;
 }
 
 .detail__card {
