@@ -1,5 +1,5 @@
 import axios from "axios"
-axios.defaults.baseURL = "https://videogames-back-production-4a4a.up.railway.app/"
+// axios.defaults.baseURL = "https://videogames-back-production-4a4a.up.railway.app/"
 
 export const actionTypes = {
     ORDER_BY_NAME: "ORDER_BY_NAME",
@@ -8,7 +8,7 @@ export const actionTypes = {
 
 export function getVideogames(){
     return async function(dispatch){
-        var json = await axios.get("/pokemon");
+        var json = await axios.get("https://videogames-back-production-4a4a.up.railway.app/pokemon");
         await dispatch({
             type: "GET_VIDEOGAMES",
             payload: json.data
@@ -54,7 +54,7 @@ export function orderByAttack(payload) {
   export function getNameVideogames(name) {
     return async function (dispatch) {
       try {
-        const response = await axios.get(`/pokemon?name=${name}`);
+        const response = await axios.get(`https://videogames-back-production-4a4a.up.railway.app/pokemon?name=${name}`);
   
         if (response.data === "no results") {
           return dispatch({
@@ -77,7 +77,7 @@ export function orderByAttack(payload) {
 
 export function getTypes(){
     return async function (dispatch) {
-        var info = await axios.get ("/types", {
+        var info = await axios.get ("https://videogames-back-production-4a4a.up.railway.app/types", {
         })
         return dispatch({ type: "GET_TYPES", payload: info.data})
     }
@@ -93,7 +93,7 @@ export function postVideogame(payload){
 export function getDetail (id){
     return async function (dispatch){
         try {
-            var json = await axios.get(`/pokemon/${id}`)
+            var json = await axios.get(`https://videogames-back-production-4a4a.up.railway.app/pokemon/${id}`)
             return dispatch({
                 type:"GET_DETAILS",
                 payload: json.data
