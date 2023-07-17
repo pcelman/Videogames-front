@@ -7,7 +7,8 @@
 .detail {
   width: 90%;
   margin: 50px auto;
-
+  display: flex;
+  place-items: center;
 }
 
 .detail__container {
