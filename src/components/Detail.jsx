@@ -24,7 +24,7 @@ export default function Detail() {
 
   return (
     <main className="detail">
-      <div className="">
+   
         <div className="detail__container">
           {detail.length > 0 ? (
             <div className="detail__card">
@@ -86,7 +86,7 @@ export default function Detail() {
             </div>
           )}
         </div>
-      </div>
+      
     </main>
   );
 }
